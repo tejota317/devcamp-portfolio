@@ -19,4 +19,11 @@ module ApplicationHelper
   def copyright_generator
     @copyright = TejotaViewTool::Renderer.copyright "Terry Boyle", "Welcome to the site"
   end
+
+  def nav_active(page)
+    if params[:action] == page
+      "active"
+    end
+  end
+
 end
