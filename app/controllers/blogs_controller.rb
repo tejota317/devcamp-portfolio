@@ -6,6 +6,8 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
     @page_title = "My Portfolio Blog"
+    @top_three = Blog.top_three
+    @except_top_three = Blog.except_top_three
   end
 
   # GET /blogs/1
