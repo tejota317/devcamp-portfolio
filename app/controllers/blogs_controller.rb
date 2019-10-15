@@ -1,13 +1,12 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "blog"
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   # GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
     @page_title = "My Portfolio Blog"
-    @top_three = Blog.top_three
-    @except_top_three = Blog.except_top_three
   end
 
   # GET /blogs/1
