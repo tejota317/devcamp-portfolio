@@ -1,5 +1,5 @@
 @import "bootstrap";
-
+@import "font-awesome";
 
 /* stylelint-disable selector-list-comma-newline-after */
 
@@ -88,6 +88,19 @@ h1, h2, h3, h4, h5, h6 {
   .blog-title {
     font-size: 3.5rem;
   }
+}
+
+/* Sidebar */
+
+.social-links{
+  font-size: 2.5em;
+}
+.social-links a{
+  color: black;
+}
+
+.social-links a:hover{
+  color: #0056b3;
 }
 
 /* Pagination */
