@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    @copyright = TejotaViewTool::Renderer.copyright "Terry Boyle", "Welcome to the site"
+    @copyright = TejotaViewTool::Renderer.copyright "Terry Boyle", "All rights reserved"
   end
 
   def nav_active(page)
