@@ -21,10 +21,46 @@ module ApplicationHelper
     @copyright = TejotaViewTool::Renderer.copyright "Terry Boyle", "All rights reserved"
   end
 
-  def nav_active(page)
-    if params[:action] == page
-      "active"
+  def nav_active path
+    "active" if current_page? path
+    # How I did this previously
+    #if params[:action] == page
+    #  "active"
+    #end
+  end
+
+  def nav_items
+    [
+      {
+        url: root_path,
+        title: "Home"
+      },
+      {
+        url: about_path,
+        title: "About Me"
+      },
+      {
+        url: contact_path,
+        title: "Contact"
+      },
+      {
+        url: blogs_path,
+        title: "Blog"
+      },
+      {
+        url: portfolios_path,
+        title: "Portfolio"
+      }
+    ]
+  end
+
+  def nav_helper style, tag_type
+    nav_links = ''
+    nav_items.each do |item|
+      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{nav_active item[:url]}'>#{item[:title]}</a></#{tag_type}>"
     end
+
+    nav_links.html_safe
   end
 
 end
