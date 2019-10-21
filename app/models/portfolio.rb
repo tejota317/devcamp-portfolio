@@ -13,6 +13,9 @@ class Portfolio < ApplicationRecord
    #Another way of defining a custom scope
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: "Ruby on Rails") }
 
+  def self.by_position
+    order("position ASC")
+  end
   #creating a default value
   after_initialize :set_defaults
 
